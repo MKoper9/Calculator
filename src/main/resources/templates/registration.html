@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th=”http://www.thymeleaf.org”>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Obliczenia</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <!--coś zaimportujemy-->
+  <nav th:replace="fragments/navbar :: navbar"></nav>
+  <!-- Page Header -->
+  <header th:replace="fragments/header :: header(title='REJESTRACJA', subtitle='możesz się zarejestrować jako firma lub osoba prywatna')"></header>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!--formularz-->
+        <h1> Formularz rejestracji</h1>
+        <hr>
+        <form th:action="@{/}" th:method="post" th:object="${user}">
+          <div class="form-group">
+            <p th:errors="*{name}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{name}" th:type="text" th:placeholder="imię" class="form-control"></br>
+            <p th:errors="*{lastName}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{lastName}" th:type="text" th:placeholder="nazwisko" class="form-control"></br>
+            <p th:if="${isUniqueEmail != null}" th:text="${isUniqueEmail}" style="font-size: 10px" class="alert alert-danger"></p>
+            <p th:errors="*{email}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{email}" th:type="email" th:placeholder="e-mail" class="form-control"></br>
+            <p th:errors="*{password}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{password}" th:type="password" th:placeholder="hasło" class="form-control"></br>
+            <p th:errors="*{companyName}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{companyName}" th:type="text" th:placeholder="'nazwa firmy - nieobowiązkowe'" class="form-control"></br>
+            <p th:errors="*{companyAddress}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{companyAddress}" th:type="text" th:placeholder="'adres firmy - nieobowiązkowe'" class="form-control"></br>
+            <p th:errors="*{companyNip}" style="font-size: 10px" class="alert alert-danger"></p>
+            <input th:field="*{companyNip}" th:type="text" th:placeholder="'nip firmy - nieobowiązkowe'" class="form-control"></br>
+
+            <input th:type="submit" value="zarejestruj" class="btn btn-primary mt-2 float-center">
+          </div>
+        </form>
+        <hr>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
