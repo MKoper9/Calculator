@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package project.controller;
 
-import com.example.demo.service.ResultService;
+import project.service.ResultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

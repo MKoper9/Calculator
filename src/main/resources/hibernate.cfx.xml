@@ -4,12 +4,12 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pipes</property>
         <property name="hibernate.connection.username">pipe_user</property>
         <property name="hibernate.connection.password">pipeUserPassword</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <mapping class="com\example\demo\model\Material"/>
         <mapping class="com\example\demo\model\Pipe"/>
         <mapping class="com\example\demo\model\Producer"/>

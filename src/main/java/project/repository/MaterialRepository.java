@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package project.repository;
 
-import com.example.demo.model.Material;
+import project.model.Material;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

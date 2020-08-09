@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package project.repository;
 
-import com.example.demo.model.Pipe;
+import project.model.Pipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
