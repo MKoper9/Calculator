@@ -19,5 +19,4 @@ public class Pipe {
     private Long pipeId;
     private Integer diameter;
     private Double thickness;
-    private
 }
