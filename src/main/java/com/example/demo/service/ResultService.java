@@ -19,7 +19,10 @@ public class ResultService {
         Double temp1 = val1*1000;
         Double temp2 = val2*1000;
 
-        boolean result= temp1.equals(temp2);
+        Integer conv1 = temp1.intValue();
+        Integer conv2 = temp2.intValue();
+
+        boolean result = conv1.equals(conv2);
         return result;
     }
 

@@ -25,8 +25,15 @@ class ResultServiceTest {
 
         assertTrue(resultService.equalsValue(0.707,0.707));
         assertTrue(resultService.equalsValue(0.707,0.707132));
-//        assertTrue(resultService.equalsValue(0.707,0.706));
-//        assertTrue(resultService.equalsValue(0.707,0.807));
+    }
+
+    @Test
+    void returnFalseAfterEquationTwoNumbers(){
+
+        ResultService resultService = new ResultService();
+
+        assertFalse(resultService.equalsValue(0.708,0.707));
+        assertFalse(resultService.equalsValue(0.707,0.907132));
     }
 
 }
