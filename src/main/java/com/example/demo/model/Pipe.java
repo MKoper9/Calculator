@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @NoArgsConstructor
 @Entity
 public class Pipe {
@@ -15,5 +17,14 @@ public class Pipe {
     private Integer dimension;
     private Float thickness;
     private String name;
+
+
+    @ManyToOne
+    @JoinColumn(name = "producerId")
+    private Producer producer;
+
+    @ManyToOne
+    @JoinColumn(name = "materialId")
+    private Material material;
 
 }

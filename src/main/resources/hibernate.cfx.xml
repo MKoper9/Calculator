@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dziedziczenie</property>-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pipes</property>
+        <property name="hibernate.connection.username">pipe_user</property>
+        <property name="hibernate.connection.password">pipeUserPassword</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
+        <mapping class="com\example\demo\model\Material"/>
+        <mapping class="com\example\demo\model\Pipe"/>
+        <mapping class="com\example\demo\model\Producer"/>
+    </session-factory>
+</hibernate-configuration>
