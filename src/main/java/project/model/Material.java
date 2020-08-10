@@ -4,10 +4,7 @@ package project.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -16,6 +13,8 @@ public class Material {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = "material_id")
     private Long materialId;
+    @Column(name = "material_name")
     private String materialName;
 }

@@ -1,9 +1,9 @@
 package project.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import project.model.Pipe;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PipeRepository extends JpaRepository<Pipe,Long> {
+public interface PipeRepository extends CrudRepository<Pipe,Long> {
 }

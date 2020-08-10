@@ -13,18 +13,19 @@ public class Pipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = "pipe_id")
     private Long pipeId;
     private Integer dimension;
-    private Float thickness;
     private String name;
+    private Float thickness;
 
+    @ManyToOne
+    @JoinColumn(name = "materialId")
+    private Material material;
 
     @ManyToOne
     @JoinColumn(name = "producerId")
     private Producer producer;
 
-    @ManyToOne
-    @JoinColumn(name = "materialId")
-    private Material material;
 
 }
