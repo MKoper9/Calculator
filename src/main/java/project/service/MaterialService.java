@@ -25,4 +25,16 @@ public class MaterialService {
     public Optional<Material> getMaterialById(Long material_id){
         return materialRepository.findById(material_id);
     }
+
+    public Boolean updateMaterialData(Long material_id, String material_name)
+    {
+        Optional<Material> materialOpt = materialRepository.findById(material_id);
+        if(materialOpt.isPresent()){
+            Material material = materialOpt.get();
+            material.setMaterialName(material_name);
+            materialRepository.save(material);
+            return true;
+        }
+        return false;
+    }
 }
