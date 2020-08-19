@@ -37,8 +37,7 @@ public class PipeService {
         return pipeRepository.findById(pipe_id);
     }
 
-    public Boolean updatePipeById(Long pipeId, Integer dimension, String name, Float thickness,
-                                  String materialName, String producerName){
+    public Boolean updatePipeById(Long pipeId, Integer dimension, String name, Float thickness){
 
         Optional<Pipe> pipeOpt = pipeRepository.findById(pipeId);
 
@@ -49,13 +48,9 @@ public class PipeService {
             pipe.setName(name);
             pipe.setThickness(thickness);
 
-
-            Material material =materialRepository.findMaterialByName(materialName);
-
-
+            return true;
         }
-
+        return false;
     }
-
 
 }

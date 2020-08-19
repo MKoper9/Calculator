@@ -1,9 +1,7 @@
 package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import project.model.Material;
 import project.model.Pipe;
 import project.model.Producer;
@@ -11,6 +9,7 @@ import project.service.MaterialService;
 import project.service.PipeService;
 import project.service.ProducerService;
 
+import javax.persistence.Column;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,6 +59,10 @@ public class CrudController {
         return materialService.getMaterialById(material_id);
     }
 
+    @PutMapping("updatePipe")
+    public Boolean updatePipeById(@RequestParam Long pipeId,Integer dimension, String name, Float thickness){
+        return pipeService.updatePipeById(pipeId,dimension,name,thickness);
+    }
 
 
 }

@@ -10,7 +10,7 @@ import project.model.Material;
 @Repository
 public interface MaterialRepository extends JpaRepository<Material, Long> {
 
-    @Modifying
-    @Query(value = "SELECT * FROM material WHERE material.material_name = :name")
-    Material findMaterialByName(@Param("name") String materialName);
+
+    @Query(value = "SELECT * FROM material WHERE material.material_name = ?1", nativeQuery = true)
+    Material findMaterialByName(String materialName);
 }
